@@ -26,6 +26,7 @@ public class ChallengeCoin : MonoBehaviour
                     coin.SetActive(false);
                     Destroy(coin);
                 }
+                challengeStarted = false;
             }
         }
     }
