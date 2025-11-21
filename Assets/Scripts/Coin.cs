@@ -4,6 +4,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     [SerializeField] private int pointsToGive;
+    [SerializeField] private AudioClip coinSound;
     
     PointsManager pointsManager;
 
@@ -16,6 +17,7 @@ public class Coin : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            FindFirstObjectByType<SFXManager>().PlaySound(coinSound);
             pointsManager.AddPoints(pointsToGive);
             Destroy(gameObject);
         }

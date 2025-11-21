@@ -536,6 +536,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5360884159498052786, guid: f68d2f79ae943f34a96111023393a89f, type: 3}
   m_PrefabInstance: {fileID: 1180378054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &262365400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 262365402}
+  - component: {fileID: 262365401}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &262365401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262365400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02b9cb62f33cae44b4aecceb9c8f39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 9135310878345954763, guid: ad009ad2d39f30a49956eb964254dd80, type: 3}
+--- !u!4 &262365402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262365400}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266769632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,7 +2492,7 @@ AudioSource:
   m_GameObject: {fileID: 1468897487}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5145235484903457486, guid: 9f8c26788a487b54b9434f5c0afa4659, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ef282be2311e9b94e9f72bfac5dcfa59, type: 3}
   m_PlayOnAwake: 1
@@ -10662,6 +10707,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3781382}
     m_Modifications:
+    - target: {fileID: 1791815567420723273, guid: 12852c57b5d9b0847aeb0a3f363979a0, type: 3}
+      propertyPath: onTriggerExit.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791815567420723273, guid: 12852c57b5d9b0847aeb0a3f363979a0, type: 3}
+      propertyPath: onTriggerExit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791815567420723273, guid: 12852c57b5d9b0847aeb0a3f363979a0, type: 3}
+      propertyPath: onTriggerExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 759952832}
+    - target: {fileID: 1791815567420723273, guid: 12852c57b5d9b0847aeb0a3f363979a0, type: 3}
+      propertyPath: onTriggerExit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791815567420723273, guid: 12852c57b5d9b0847aeb0a3f363979a0, type: 3}
+      propertyPath: onTriggerExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791815567420723273, guid: 12852c57b5d9b0847aeb0a3f363979a0, type: 3}
+      propertyPath: onTriggerExit.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791815567420723273, guid: 12852c57b5d9b0847aeb0a3f363979a0, type: 3}
+      propertyPath: onTriggerExit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3071414452575296676, guid: 12852c57b5d9b0847aeb0a3f363979a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.5
@@ -10908,3 +10981,4 @@ SceneRoots:
   - {fileID: 1628502033}
   - {fileID: 3774336082584162600}
   - {fileID: 1468897489}
+  - {fileID: 262365402}

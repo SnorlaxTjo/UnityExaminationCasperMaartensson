@@ -138,3 +138,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToGive: 1
+  coinSound: {fileID: 8300000, guid: 5059141f82c36b04ab1ec84ad6555ff0, type: 3}
