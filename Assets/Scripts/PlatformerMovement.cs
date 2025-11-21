@@ -101,10 +101,12 @@ public class PlatformerMovement : MonoBehaviour
         // Is our groundCheckCollider touching the groundLayer? If so, return the value "true"
         if (groundCheckCollider.IsTouchingLayers(groundLayer))
         {
+            animator.SetBool("IsJumping", false);
             return true;
         }
         else
         {
+            animator.SetBool("IsJumping", true);
             return false;
         }
     }
@@ -152,10 +154,12 @@ public class PlatformerMovement : MonoBehaviour
         if (controlEnabled)
         {
             moveInput = context.ReadValue<Vector2>().normalized;
+            animator.SetBool("IsWalking", Mathf.Abs(moveInput.x) > 0.1f);
         }
         else
         {
             moveInput = Vector2.zero;
+            animator.SetBool("IsWalking", false);
         }
     }
 
