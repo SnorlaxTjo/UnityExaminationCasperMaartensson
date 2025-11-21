@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] private int maxHealth;
     [SerializeField] private float damageBuffer;
+
+    [Space] 
+    
+    [SerializeField] private UnityEvent whatToDoUponDeath;
 
     private int health;
     public bool canTakeDamage { get; set; } = true;
@@ -25,7 +30,7 @@ public class HealthManager : MonoBehaviour
         healthText.text = "Health: " + health;
         if (health <= 0)
         {
-            Debug.Log("ded");
+            whatToDoUponDeath.Invoke();
         }
     }
 }
