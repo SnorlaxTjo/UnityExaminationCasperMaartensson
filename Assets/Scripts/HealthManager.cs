@@ -10,7 +10,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private float damageBuffer;
 
     private int health;
-    private bool canTakeDamage = true;
+    public bool canTakeDamage { get; set; } = true;
 
     private void Start()
     {
@@ -19,20 +19,13 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (!canTakeDamage) { return; }
+        
         health -= damage;
+        healthText.text = "Health: " + health;
         if (health <= 0)
         {
             Debug.Log("ded");
         }
-        StartCoroutine(DamageBufferRoutine());
-    }
-
-    private IEnumerator DamageBufferRoutine()
-    {
-        canTakeDamage = false;
-        
-        yield return new WaitForSeconds(damageBuffer);
-        
-        canTakeDamage = true;
     }
 }
