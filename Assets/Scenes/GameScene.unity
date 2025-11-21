@@ -924,7 +924,7 @@ MonoBehaviour:
   decelerationTime: 1
   showCameraLimits: 1
   lowerCameraLimit: {x: 0, y: -1}
-  upperCameraLimit: {x: 40, y: 20}
+  upperCameraLimit: {x: 60, y: 20}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
