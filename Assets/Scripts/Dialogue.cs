@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
@@ -8,11 +9,21 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI textBox;
     [SerializeField] private Button nextButton;
     [SerializeField] List<string> dialogue;
+    [SerializeField] GameObject dialogueInfo;
 
     [SerializeField] private UnityEvent onStartDialogue;
     [SerializeField] private UnityEvent onEndDialogue;
 
     private int currentIndex = -1;
+    private bool canTalk;
+
+    private void Update()
+    {
+        if (canTalk && Input.GetKeyDown(KeyCode.E))
+        {
+            NextDialogue();
+        }
+    }
 
 
     public void NextDialogue()
@@ -36,6 +47,18 @@ public class Dialogue : MonoBehaviour
         {
             textBox.text = "";
             onEndDialogue?.Invoke();
+            currentIndex = -1;
+            nextButton?.onClick.RemoveListener(NextDialogue);
+        }
+    }
+
+    public void SetTalk(bool canTalk)
+    {
+        this.canTalk = canTalk;
+        dialogueInfo.SetActive(canTalk);
+        if (!canTalk)
+        {
+            textBox.text = "";
             currentIndex = -1;
             nextButton?.onClick.RemoveListener(NextDialogue);
         }
